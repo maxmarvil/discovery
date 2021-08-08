@@ -7,9 +7,10 @@ use aux6::{entry, iprint, iprintln};
 
 #[entry]
 fn main() -> ! {
-    let mut itm = aux6::init();
+    panic!("Hello, world!");
+    // let mut itm = aux6::init();
 
-    iprintln!(&mut itm.stim[0], "Hello, world!");
+    // iprintln!(&mut itm.stim[0], "Hello, world!");
 
-    loop {}
+    // loop {}
 }
