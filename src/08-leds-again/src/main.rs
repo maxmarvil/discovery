@@ -9,6 +9,19 @@ fn main() -> ! {
     let (gpioe, rcc) = aux8::init();
 
     // TODO initialize GPIOE
+    rcc.ahbenr.write(|w|{
+        w.iopeen().set_bit()
+    });
+    gpioe.moder.write(|w|{
+        w.moder8().output();
+        w.moder9().output();
+        w.moder10().output();
+        w.moder11().output();
+        w.moder12().output();
+        w.moder13().output();
+        w.moder14().output();
+        w.moder15().output()
+    });
 
     // Turn on all the LEDs in the compass
     gpioe.odr.write(|w| {
